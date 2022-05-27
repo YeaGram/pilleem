@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-export default function Card({ anime }) {
+export default function Card(props) {
    const [topAnime, SetTopAnime] = useState([]);
 
    const GetTopAnime = async () => {
@@ -9,12 +9,12 @@ export default function Card({ anime }) {
          `https://api.jikan.moe/v3/top/anime/1/bypopularity`
       ).then((res) => res.json());
 
-      SetTopAnime(temp.top.slice(0, 50));
+      SetTopAnime(temp.top.slice(0, props.loadMore));
    };
 
    useEffect(() => {
       GetTopAnime();
-   }, []);
+   }, [props.loadMore]);
    return (
       <>
          {topAnime.map((anime) => (
