@@ -9,7 +9,7 @@ export default function Card({ anime }) {
          `https://api.jikan.moe/v3/top/anime/1/bypopularity`
       ).then((res) => res.json());
 
-      SetTopAnime(temp.top.slice(0, 5));
+      SetTopAnime(temp.top.slice(0, 50));
    };
 
    useEffect(() => {
