@@ -1,26 +1,25 @@
 import Partikel from "./particleBackground";
 import TopAnime from "./topAnime";
-import { useState, useEffect } from "react";
 
 const Content = () => {
-   const [topAnime, SetTopAnime] = useState([]);
+   // const [topAnime, SetTopAnime] = useState([]);
 
-   const GetTopAnime = async () => {
-      const temp = await fetch(
-         `https://api.jikan.moe/v3/top/anime/1/bypopularity`
-      ).then((res) => res.json());
+   // const GetTopAnime = async () => {
+   //    const temp = await fetch(
+   //       `https://api.jikan.moe/v3/top/anime/1/bypopularity`
+   //    ).then((res) => res.json());
 
-      SetTopAnime(temp.top.slice(0, 50));
-   };
+   //    SetTopAnime(temp.top.slice(0, 5));
+   // };
 
-   useEffect(() => {
-      GetTopAnime();
-   }, []);
+   // useEffect(() => {
+   //    GetTopAnime();
+   // }, []);
 
    ////
    return (
       <div>
-         <TopAnime animeList={topAnime} />
+         <TopAnime />
          {/* <Newest /> */}
 
          <div className="w-full  border-t-2 border-rose-900 flex flex-col items-center ">
