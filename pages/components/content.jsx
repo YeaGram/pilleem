@@ -1,6 +1,7 @@
 import Partikel from "./particleBackground";
 import TopAnime from "./topAnime";
-
+import { useState } from "react";
+import { BsGrid1X2Fill, BsGridFill } from "react-icons/bs";
 const Content = () => {
    // const [topAnime, SetTopAnime] = useState([]);
 
@@ -17,9 +18,30 @@ const Content = () => {
    // }, []);
 
    ////
+   const [grids, setGrids] = useState(true);
+   const changeModes = () => {
+      setGrids(!grids);
+   };
+
    return (
       <div>
-         <TopAnime />
+         <h3 className="font-extrabold mb-2 font-montserrat text-rose-200 text-4xl text-center">
+            Top Anime
+         </h3>
+         <div className="w-full grid place-content-center">
+            <div className="text-white py-1 drop-shadow-sm px-2 ml-2 rounded-md bg-gray-700 w-fit ">
+               <button
+                  type="button"
+                  className="px-1 w-fit flex items-center"
+                  onClick={changeModes}
+               >
+                  {grids && <BsGrid1X2Fill />}
+                  {!grids && <BsGridFill />}
+                  <p className="px-2">Change Mode!</p>
+               </button>
+            </div>
+         </div>
+         <TopAnime viewMode={grids} />
          {/* <Newest /> */}
 
          <div className="w-full  border-t-2 border-rose-900 flex flex-col items-center ">

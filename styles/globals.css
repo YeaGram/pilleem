@@ -22,3 +22,19 @@ body {
 #hamburgerButton.hamburgerActive > .lineThree {
    @apply w-1/2 h-1 block bg-rose-300;
 }
+
+#TopAnime.singleModes {
+   @apply grid-cols-1 gap-4;
+}
+#TopAnime.singleModes #cardWrapper {
+   @apply w-[90vw] max-w-[250px] h-fit min-h-[500px] max-h-[500px];
+}
+#TopAnime.doubleModes {
+   @apply grid-cols-2 gap-4;
+}
+#TopAnime.doubleModes #cardWrapper {
+   @apply w-[90vw] max-w-[200px] h-full min-h-[420px] max-h-[510px];
+}
+#TopAnime.doubleModes #cardWrapper a {
+   @apply w-[100%] h-52;
+}

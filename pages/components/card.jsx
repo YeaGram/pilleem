@@ -19,15 +19,17 @@ export default function Card(props) {
       <>
          {topAnime.map((anime) => (
             <div
+               id="cardWrapper"
                key={anime.mal_id}
-               className="w-[60vw] h-fit min-h-[500px] max-h-[500px] p-4 shadow-md my-7 bg-transparent bg-rose-800 border-2 border-rose-500"
+               className=" flex justify-center p-4 shadow-md bg-transparent bg-rose-800 border-2 border-rose-500"
             >
-               <div className="flex flex-col items-center w-full h-full">
+               <div className="grid place-items-center w-[90%]">
                   <a
+                     id="cardPoster"
                      href={anime.url}
                      rel="noreferrer"
                      target="_blank"
-                     className={`Image border-2 border-rose-600 w-48 h-72 grid place-items-center  hover:scale-125 hover:-translate-y-9 hover:drop-shadow-myDrop1 transition-all relative`}
+                     className={` Image border-2 border-rose-600 w-[100%] h-72  hover:scale-125 hover:-translate-y-9 hover:drop-shadow-myDrop1 transition-all relative`}
                   >
                      <Image
                         layout="fill"
