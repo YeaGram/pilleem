@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Card from "./card";
+import CardTopPopular from "./cardPopular";
 
-export default function TopAnime(props) {
+export default function PopularAnime(props) {
    const [more, setMore] = useState(10);
    const loads = () => {
       return setMore(more + 10);
@@ -15,12 +15,11 @@ export default function TopAnime(props) {
          <div className="">
             {/* {console.log(topAnime)} */}
             <div
-               id="TopAnime"
                className={`grid place-content-center place-items-center my-5 py-3 ${
                   props.viewMode ? "singleModes" : "doubleModes"
                }`}
             >
-               <Card loadMore={more} viewMode={props.viewMode} />
+               <CardTopPopular loadMore={more} viewMode={props.viewMode} />
             </div>
             <div className="w-[100%] grid place-items-center">
                {max() && (

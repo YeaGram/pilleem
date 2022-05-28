@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-export default function Card(props) {
+export default function CardTopAiring(props) {
    const [topAnime, SetTopAnime] = useState([]);
 
    const GetTopAnime = async () => {
       const temp = await fetch(
-         `https://api.jikan.moe/v3/top/anime/1/bypopularity`
+         `https://api.jikan.moe/v3/top/anime/1/airing`
       ).then((res) => res.json());
 
       SetTopAnime(temp.top.slice(0, props.loadMore));
@@ -19,21 +19,18 @@ export default function Card(props) {
       <>
          {topAnime.map((anime) => (
             <div
-               id="cardWrapper"
                key={anime.mal_id}
-               className=" flex justify-center p-4 shadow-md bg-transparent bg-rose-800 border-2 border-rose-500"
+               className="shadow-md bg-transparent bg-rose-800 border-2 border-rose-500 cardWrapper"
             >
-               <div className="grid place-items-center w-[90%]">
+               <div className="flex flex-col justify-center items-center">
                   <a
-                     id="cardPoster"
                      href={anime.url}
                      rel="noreferrer"
                      target="_blank"
-                     className={` Image border-2 border-rose-600 w-[100%] h-72  hover:scale-125 hover:-translate-y-9 hover:drop-shadow-myDrop1 transition-all relative`}
+                     className={`border-2 border-rose-600 hover:scale-125 hover:-translate-y-9 hover:drop-shadow-myDrop1 transition-all relative`}
                   >
                      <Image
                         layout="fill"
-                        objectFit="cover"
                         src={anime.image_url}
                         alt="anime Images"
                         className="w-full h-full"

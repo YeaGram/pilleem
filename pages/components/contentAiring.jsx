@@ -1,8 +1,8 @@
 import Partikel from "./particleBackground";
-import TopAnime from "./topAnime";
+import AiringPopular from "./airingAnime";
 import { useState } from "react";
 import { BsGrid1X2Fill, BsGridFill } from "react-icons/bs";
-const Content = () => {
+const ContentAiring = () => {
    // const [topAnime, SetTopAnime] = useState([]);
 
    // const GetTopAnime = async () => {
@@ -26,7 +26,7 @@ const Content = () => {
    return (
       <div>
          <h3 className="font-extrabold mb-2 font-montserrat text-rose-200 text-4xl text-center">
-            Top Anime
+            Top Airing Anime
          </h3>
          <div className="w-full grid place-content-center">
             <div className="text-white py-1 drop-shadow-sm px-2 ml-2 rounded-md bg-gray-700 w-fit ">
@@ -41,7 +41,7 @@ const Content = () => {
                </button>
             </div>
          </div>
-         <TopAnime viewMode={grids} />
+         <AiringPopular viewMode={grids} />
          {/* <Newest /> */}
 
          <div className="w-full  border-t-2 border-rose-900 flex flex-col items-center ">
@@ -53,4 +53,4 @@ const Content = () => {
       </div>
    );
 };
-export default Content;
+export default ContentAiring;
